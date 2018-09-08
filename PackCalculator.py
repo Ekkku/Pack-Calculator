@@ -13,6 +13,7 @@ material_2=Material("Trimmed Meat", 0)
 material_3=Material("Ground Grain", 0)
 material_4=Material("Dryed Flowers", 0)
 
+materialid= {material_1, material_2, material_3, material_4}
 
 retsepti_material_1 = RetseptiMaterial(material_1, 50)
 retsepti_material_2 = RetseptiMaterial(material_2, 50)
@@ -54,17 +55,11 @@ def create_entry(material):
         print (material.nimi, material.hind)
     return entry
 
-entry_1=create_entry(material_1)
-entry_1.pack(side=RIGHT, padx=15)
+for mat in materialid:
+    entry_1=create_entry(mat)
+    entry_1.pack(side=RIGHT, padx=15)
 
-entry_2=create_entry(material_2)
-entry_2.pack(side=RIGHT, padx=15)
 
-entry_3=create_entry(material_3)
-entry_3.pack(side=RIGHT, padx=15)
-
-entry_4=create_entry(material_4)
-entry_4.pack(side=RIGHT, padx=15)
 
 
 #ei t00ta
