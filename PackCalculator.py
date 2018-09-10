@@ -52,6 +52,8 @@ label_3.grid(row=3, column=0, padx=15)
 label_4 = Label(root, text=material_4.nimi)
 label_4.grid( row=4, column=0, padx=15)
 
+labels={label_1,label_2, label_3, label_4}
+
 
 
 
@@ -68,8 +70,33 @@ for mat in materialid:
     entry_1=create_entry(mat)
     entry_1.grid(column=1, padx=15)
 
+entrys=[entry_1]
+
+# ***** googlist, lehe keeramine****
+# kergem versioon
+
+def page1():
+    for label in labels:
+        label.grid()
+    page2text.grid_forget()
 
 
+def page2():
+    for label in labels:
+        label.grid_forget()
+    # page1text.pack_forget()
+    page2text.grid()
+    for entry in entrys:
+        entry.grid_forget()
+
+page1btn = Button(root, text="Maerials", command=page1)
+page2btn = Button(root, text="Show my best pack options", command=page2)
+page2text = Label(root, text="This is page 2")
+
+page1btn.grid()
+page2btn.grid()
+
+# lehe keeramise lopp
 
 #ei t00ta
 #aa_icon = PhotoImage(file="download.png")
