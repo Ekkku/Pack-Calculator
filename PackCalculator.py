@@ -16,7 +16,7 @@ material_3=Material("Ground Grain", 0)
 material_4=Material("Dryed Flowers", 0)
 material_5=Material("Grape", 0)
 material_6=Material("Mushroom", 0)
-material_7=Material("Gilda Star", 0.1)
+material_7=Material("Gilda Star", 0.00001)
 material_8=Material("Duck Down", 0)
 material_9=Material("Barley", 0)
 material_10=Material("Medicinal Powder", 0)
@@ -52,9 +52,46 @@ retsepti_materialid = {retsepti_material_1, retsepti_material_2, retsepti_materi
 
 
 asukoht_1=Asukoht("Ahnimar")
-asukohad = {asukoht_1}
+asukoht_2=Asukoht("Hellswamp")
+asukoht_3=Asukoht("Halcyona")
+asukoht_4=Asukoht("Sanddeep")
+asukoht_5=Asukoht("Two Crown")
+asukoht_6=Asukoht("Cinderstonr  Moor")
+asukoht_7=Asukoht("Marianople")
+asukoht_8=Asukoht("Dewstone Plains")
+asukoht_9=Asukoht("White Arden")
+asukoht_10=Asukoht("Aubre Cradle")
+asukoht_11=Asukoht("Airain Rock")
+asukoht_12=Asukoht("Gweonid Forest")
+asukoht_13=Asukoht("Solzreed Peninsula")
+asukoht_14=Asukoht("Lilyut Hills")
+asukoht_15=Asukoht("Karkasse Ridgelands")
 
+
+asukohad = {asukoht_1, asukoht_2, asukoht_3, asukoht_4, asukoht_5, asukoht_6, asukoht_7, asukoht_8, asukoht_9, asukoht_10, asukoht_11, asukoht_12,
+            asukoht_13, asukoht_14, asukoht_15}
+
+#igal kohal on oma ferilizer
 retsept_1=Retsept(asukoht_1, "Ahnimar Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_2=Retsept(asukoht_2, "Hellswamp Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_3=Retsept(asukoht_3, "Halcyona Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_4=Retsept(asukoht_4, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_5=Retsept(asukoht_5, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_6=Retsept(asukoht_6, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_7=Retsept(asukoht_7, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_8=Retsept(asukoht_8, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_9=Retsept(asukoht_9, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_10=Retsept(asukoht_10, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_11=Retsept(asukoht_11, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_12=Retsept(asukoht_12, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_13=Retsept(asukoht_13, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_14=Retsept(asukoht_14, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+retsept_15=Retsept(asukoht_15, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
+
+
+
+
+
 
 retseptid = {retsept_1}
 
@@ -65,46 +102,45 @@ lopp = {lopp_1}
 
 #***** 2. ******
 instructions_1 = Label(root, text="Fill in the prices per material.", padx=30, pady=10)
-instructions_1.grid(columnspan=2)
+instructions_1.pack(side=TOP)
 
-right_frame=Frame(root)
-right_frame.grid()
-left_frame=Frame(root)
-left_frame.grid()
+first_frame=Frame(root)
+first_frame.pack()
 
 
-label_1 = Label(left_frame, text=material_1.nimi)
-label_1.grid( padx=15)
 
-label_2 = Label(left_frame, text=material_2.nimi)
-label_2.grid( padx=15)
+label_1 = Label(first_frame, text=material_1.nimi)
+label_1.pack(side=LEFT, padx=15,anchor=W)
 
-label_3 = Label(left_frame, text=material_3.nimi)
-label_3.grid( padx=15)
+label_2 = Label(first_frame, text=material_2.nimi)
+label_2.pack(side=LEFT, padx=15,anchor=W)
 
-label_4 = Label(left_frame, text=material_4.nimi)
-label_4.grid( padx=15)
+label_3 = Label(first_frame, text=material_3.nimi)
+label_3.pack(side=LEFT, padx=15,anchor=W)
+
+label_4 = Label(first_frame, text=material_4.nimi)
+label_4.pack(side=LEFT, padx=15,anchor=W)
 
 labels={label_1,label_2, label_3, label_4}
 
-#labeli tegemine
+#labeli tegemine, ei toota
 def create_label(material):
     sv = StringVar()
     sv.trace("w", lambda name, index, mode, sv=sv: callback(sv))
-    label = Label(left_frame, textvariable=sv)
+    label = Label(first_frame, textvariable=sv)
     def callback(sv):
         material.nimi = sv.get()
     return label
 
 for mat in materialid:
     label_5=create_label(mat)
-    label_5.grid(column=0, padx=15)
+    label_5.pack( padx=15,anchor=W)
 
 #entry tegemine
 def create_entry(material):
     sv = StringVar()
     sv.trace("w", lambda name, index, mode, sv=sv: callback(sv))
-    entry = Entry(right_frame, textvariable=sv)
+    entry = Entry(first_frame, textvariable=sv)
     def callback(sv):
         material.hind = sv.get()
         print (material.nimi, material.hind)
@@ -112,7 +148,7 @@ def create_entry(material):
 
 for mat in materialid:
     entry_1=create_entry(mat)
-    entry_1.grid(column=1, padx=15)
+    entry_1.pack(side=RIGHT, padx=15,anchor=W)
 
 entrys=[entry_1]
 
@@ -121,24 +157,24 @@ entrys=[entry_1]
 
 def page1():
     for label in labels:
-        label.grid()
-    page2text.grid_forget()
+        label.pack()
+    page2text.pack_forget()
 
 
 def page2():
     for label in labels:
-        label.grid_forget()
+        label.pack_forget()
     # page1text.pack_forget()
-    page2text.grid()
+    page2text.pack()
     for entry in entrys:
-        entry.grid_forget()
+        entry.pack_forget()
 
-page1btn = Button(root, text="Maerials", command=page1)
-page2btn = Button(root, text="Show my best pack options", command=page2)
-page2text = Label(root, text="This is page 2")
+page1btn = Button(first_frame, text="Maerials", command=page1)
+page2btn = Button(first_frame, text="Show my best pack options", command=page2)
+page2text = Label(first_frame, text="This is page 2")
 
-page1btn.grid()
-page2btn.grid()
+page1btn.pack()
+page2btn.pack()
 
 # lehe keeramise lopp
 
