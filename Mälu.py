@@ -89,99 +89,10 @@ retsept_14=Retsept(asukoht_14, "Dewstone Fertilizer", [retsepti_material_1, rets
 retsept_15=Retsept(asukoht_15, "Dewstone Fertilizer", [retsepti_material_1, retsepti_material_2, retsepti_material_3, retsepti_material_4])
 
 
-
-
-
-
-retseptid = {retsept_1}
+retseptid = {retsept_1, retsept_2, retsept_3, retsept_4, retsept_5, retsept_6, retsept_7, retsept_8, retsept_9, retsept_10, retsept_11, retsept_12,
+             retsept_13, retsept_14, retsept_15}
 
 
 lopp_1=Lopp("Solzreed", retsept_1, 23.4991, 0)
 
 lopp = {lopp_1}
-
-#***** 2. ******
-instructions_1 = Label(root, text="Fill in the prices per material.", padx=30, pady=10)
-instructions_1.grid(columnspan=2)
-
-#first_frame=Frame(root)
-#first_frame.grid()
-
-
-
-label_1 = Label(first_frame, text=material_1.nimi)
-label_1.grid()
-
-label_2 = Label(first_frame, text=material_2.nimi)
-label_2.grid()
-
-label_3 = Label(first_frame, text=material_3.nimi)
-label_3.grid()
-
-label_4 = Label(first_frame, text=material_4.nimi)
-label_4.grid()
-
-labels={label_1,label_2, label_3, label_4}
-
-#labeli tegemine, ei toota, sv on siin sn
-def create_label(material):
-    ns = StringVar()
-    ns.trace("w", lambda name, index, mode, ns=ns: callback(sv))
-    label = Label(first_frame, textvariable=ns)
-    def callback(ns):
-        material.nimi = ns.get()
-    return label
-
-for mat in materialid:
-    label_5=create_label(mat)
-    label_5.grid()
-
-#entry tegemine
-def create_entry(material):
-    sv = StringVar()
-    sv.trace("w", lambda name, index, mode, sv=sv: callback(sv))
-    entry = Entry(first_frame, textvariable=sv)
-    def callback(sv):
-        material.hind = sv.get()
-        print (material.nimi, material.hind)
-    return entry
-
-for mat in materialid:
-    entry_1=create_entry(mat)
-    entry_1.grid()
-
-entrys=[entry_1]
-
-# ***** googlist, lehe keeramine****
-# kergem versioon
-
-def page1():
-    for label in labels:
-        label.grid()
-    page2text.grid_forget()
-
-
-def page2():
-    for label in labels:
-        label.grid_forget()
-    # page1text.pack_forget()
-    page2text.grid()
-    for entry in entrys:
-        entry.grid_forget()
-
-page1btn = Button(first_frame, text="Maerials", command=page1)
-page2btn = Button(first_frame, text="Show my best pack options", command=page2)
-page2text = Label(first_frame, text="This is page 2")
-
-page1btn.grid()
-page2btn.grid()
-
-# lehe keeramise lopp
-
-#ei t00ta
-#aa_icon = PhotoImage(file="download.png")
-#lable = Label(root, image=aa_icon)
-#label.pack()
-
-
-root.mainloop()
